@@ -1,0 +1,18 @@
+POZO
+
+from 0 to 9.5
+95000 measurements
+dt = 0.0001
+dx = 0.005
+
+
+BARRERA
+
+from 0 to 9.5
+95000 measurements
+dt = 0.0001
+dx = 0.005
+
+
+Survival Probability = 0.996
+
