@@ -74,86 +74,110 @@
 
 <br><br> 
     
+<div class="section">
+    <h2>Zeno Dynamics via Position Measurements</h2>
+
+    <figure style="text-align: center; margin: 40px 0;">
+        <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
+            We consider a free particle in one dimension, initially described by a Gaussian wave function:
+        </p>
+
+        <p style="font-size: 1.2em;">
+            \[
+            \psi(\xi, 0) = \left( \frac{2}{\pi} \right)^{1/4} \exp\left[-(\xi - \xi_0)^2 + i \kappa_0 \xi \right]
+            \]
+        </p>
+
+        <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
+            where \(\xi_0\) is the normalized initial position and \(\kappa_0\) the normalized momentum. The evolution is governed by the dimensionless Schrödinger equation:
+        </p>
+
+        <p style="font-size: 1.2em;">
+            \[
+            i \frac{\partial \psi}{\partial \tau} = -\frac{1}{\kappa_0} \frac{\partial^2 \psi}{\partial \xi^2}
+            \]
+        </p>
+
+        <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
+            The numerical solution, obtained via a Crank–Nicolson scheme, is shown below.
+        </p>
+
+        <video controls loop style="width: 55%; height: auto;">
+            <source src="ANIMATIONS/DEFENSE%20ANIMATIONS/Position%20Measurements/NO%20MEASUREMENTS.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <figcaption style="margin-top: 10px; color: #555;">
+            Free evolution of a Gaussian wave packet. The observed dynamics are given by Gaussian translation and natural spreading.
+            <br>No position measurements are performed within the range [\(\xi_{\text{min}}\), \(\xi_{\text{max}}\)].
+        </figcaption>
+    </figure>
+
+
+    <figure style="text-align: center; margin: 40px 0;">
+        <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
+            We now simulate the effect of \(N\) sequential position measurements, modeled as Von Neumann projections, applied every \(\Delta \tau\). The final state after \(N\) steps is:
+        </p>
+
+        <p style="font-size: 1.2em;">
+    \[
+    |\psi_N \rangle = \Pi e^{-i H \Delta \tau} \dots \Pi e^{-i H \Delta \tau}  \Pi e^{-i H \Delta \tau} |\psi(0)\rangle
+    \]
+</p>
+
+<p style="font-size: 1.2em;">
+    \[
+    \begin{aligned}
+    H &= -\frac{1}{\kappa_0} \frac{\partial^2}{\partial \xi^2} \quad & \Pi &= \int_{\xi_{\text{min}}}^{\xi_{\text{max}}} |\xi\rangle \langle \xi| \, d\xi
+    \end{aligned}
+    \]
+</p>
+
+
+        <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
+            The outcome of this process is shown below.
+        </p>
+
+        <video controls loop style="width: 55%; height: auto;">
+            <source src="ANIMATIONS/DEFENSE%20ANIMATIONS/Position%20Measurements/POSITION%20MEASUREMENTS.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <figcaption style="margin-top: 10px; color: #555;">
+            Evolution of a Gaussian wave packet with repeated position measurements in [\(\xi_{\text{min}}\), \(\xi_{\text{max}}\)].
+            <br>The wave packet is confined within the projection range, showing momentum reversals at the boundaries that mimic reflective walls.
+        </figcaption>
+    </figure>
+</div>
+
+
+<br>
+
     <div class="section">
-        <h2>Zeno Dynamics via Position Measurements</h2>
+        <h2>Zeno Dynamics via Momentum Measurements</h2>
      
         <figure style="text-align: center; margin: 40px 0;">
-<p style="max-width: 800px; margin: 0 auto; text-align: justify;">
-        We consider a free particle propagating in one spatial dimension, whose initial quantum state in position space is described by the normalized wavefunction:
-    </p>
-    <p style="font-size: 1.2em;">
-        \[
-        \psi(\xi, 0) = \left( \frac{2}{\pi} \right)^{1/4} \exp\left[-(\xi - \xi_0)^2\right] \exp(i \kappa_0 \xi)
-        \]
-    </p>
     <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
-            Here, \(\xi_0\) is the normalized position in \(\xi\)-space where the particle is initially found around, and \(\kappa_0\) is the normalized momentum in \(\kappa\)-space the particle initially has. The time evolution of the system is governed by the dimensionless Schrödinger equation:
+        We now consider a particle in an initial state analogous to that introduced in the previous section, propagating towards a potential barrier defined by:
+    </p>
+
+<p style="font-size: 1.2em;">
+    \[
+    v_0v(\xi) = \dfrac{v_0}{1 + \left|\xi / \xi_b\right|^\alpha}
+    \]
+</p>
+
+    <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
+        Here, \(v_0\) denotes the ratio between the maximum potential energy and the initial kinetic energy of the particle. The parameter \(\xi_b\) sets half the width of the barrier, while \(\alpha\) controls the smoothness of its edges. The time evolution of the system is governed by the dimensionless Schrödinger equation:
         </p>
     <p style="font-size: 1.2em;">
         \[
-        i \frac{\partial \psi}{\partial \tau} = -\frac{1}{\kappa_0} \frac{\partial^2 \psi}{\partial \xi^2}
+        i \frac{\partial \psi}{\partial \tau} = -\frac{1}{\kappa_0} \frac{\partial^2 \psi}{\partial \xi^2} + \kappa_0v_0v(\xi)\psi
         \]
     </p>
-    <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
-        The numerical solution is obtained using a Crank–Nicolson scheme, and the resulting evolution is illustrated below.
-    </p>
-    <video controls loop style="width: 55%; height: auto;">
-        <source src="ANIMATIONS/DEFENSE%20ANIMATIONS/Position%20Measurements/NO%20MEASUREMENTS.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <figcaption style="margin-top: 10px; color: #555;">
-        Free evolution of a Gaussian wave packet. The observed dynamics are given by Gaussian translation and natural spreading. <br>No position measurements are performed within the range [\(\xi_{\text{min}}\), \(\xi_{\text{max}}\)].
-    </figcaption>
-</figure>
+    
 
 
-
-
-
-<figure style="text-align: center; margin: 40px 0;">
-<p style="max-width: 800px; margin: 0 auto; text-align: justify;">
-    We now simulate the outcome of performing \(N\) position measurements, each modeled as a Von Neumann projection. A position measurement is performed every \(\Delta\tau\) time step, and after \(N\) measurements, the final state of the system is given by:
-</p>
-
-<p style="font-size: 1.2em;">
-    \[
-    |\psi_N \rangle =  \Pi e^{-i H \Delta \tau} \dots \Pi e^{-i H \Delta \tau}  \Pi e^{-i H \Delta \tau} |\psi(0)\rangle\, ,
-    \]
-</p>
-
-<p style="max-width: 800px; margin: 0 auto; text-align: justify;">
-    In this equation, the Hamiltonian \(H\) is given by:
-</p>
-
-<p style="font-size: 1.2em;">
-    \[
-    H = \left(-\frac{1}{\kappa_0}\right) \frac{\partial^2}{\partial \xi^2} \, ,
-    \]
-</p>
-
-<p style="max-width: 800px; margin: 0 auto; text-align: justify;">
-    and the projector \(\Pi\) is defined as:
-</p>
-
-<p style="font-size: 1.2em;">
-    \[
-    \Pi = \int_{\xi_{\text{min}}}^{\xi_{\text{max}}} |\xi\rangle \langle \xi| \, d\xi \, .
-    \]
-</p>
-<p style="max-width: 800px; margin: 0 auto; text-align: justify;">
-    The result of this simulation is displayed below.
-</p>
-
-    <video controls loop style="width: 55%; height: auto;">
-        <source src="ANIMATIONS/DEFENSE%20ANIMATIONS/Position%20Measurements/POSITION%20MEASUREMENTS.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <figcaption style="margin-top: 10px; color: #555;">
-        Free evolution of a Gaussian wave packet. The observed dynamics are given by Gaussian translation and natural spreading. <br>No position measurements are performed within the range [\(\xi_{\text{min}}\), \(\xi_{\text{max}}\)].
-    </figcaption>
-    </div>
 </body>
 </html>
 
