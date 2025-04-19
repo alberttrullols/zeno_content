@@ -15,6 +15,11 @@
             color: #2c3e50;
             margin-top: 40px;
         }
+        h2.subtitle {
+            color: #555;
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
         a {
             color: #0066cc;
             text-decoration: none;
@@ -24,7 +29,7 @@
             text-decoration: underline;
         }
         video {
-            width: 100vw;
+            width: 80%;  /* Adjusted width to make the video smaller */
             height: auto;
             margin: 30px 0;
             border: none;
@@ -38,24 +43,42 @@
         .section {
             margin: 40px 0;
         }
+        .abstract {
+            max-width: 800px;
+            margin: 10px auto;
+            padding: 0 10px;
+            text-align: left;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
-    <h1>Quantum Zeno Dynamics Research</h1>
-    <p>Welcome to my research on the Quantum Zeno Effect and Quantum Zeno Dynamics, exploring quantum system evolution under frequent measurements.</p>
+    <h1>The Zeno Paradox in Quantum Mechanics</h1>
+    <h2 class="subtitle">Author: Albert Trullols Puigcerver</h2>
+    <h2 class="subtitle">Supervisors:Hector Briongos and Bruno Julia</h2>
+
+    <!-- Abstract Section -->
+    <div class="section">
+        <h2>Abstract</h2>
+        <p class="abstract">
+            The Quantum Zeno Effect slows the evolution of a quantum system through frequent measurements, preventing state transitions. In the limit of infinitely fast measurements, the evolution effectively freezes. Quantum Zeno Dynamics (QZD) extends this by confining the system to a subspace of its Hilbert space. This work examines QZD through position and momentum measurements modeled as Von Neumann projections. Frequent measurements confine the system within the projection subspace, leading to remarkable effects near its boundaries. Position measurements on a free particle induce momentum reversals, whereas momentum measurements on a particle in a symmetric potential give rise to the novel phenomenon of equipotential translocation.
+        </p>
+    <p><a href="TFG-Trullols-Puigcerver-Albert.pdf" download>Download the Full Article</a></p>
+    </div>
     
     <div class="section">
         <h2>Research Article</h2>
-        <p><a href="TFG-Trullols-Puigcerver-Albert.pdf" download>Download the Full Article (PDF)</a></p>
+        <p><a href="TFG-Trullols-Puigcerver-Albert.pdf" download>Download the Full Article</a></p>
     </div>
     
     <div class="section">
         <h2>Featured Animation</h2>
-        <p>Momentum Measurements in a Quantum Well</p>
+        <p>Position Measurements in a Quantum Well</p>
         <video controls>
-            <source src="ANIMATIONS/DEFENSE%20ANIMATIONS/Momentum%20Measurements/MOMENTUM%20MEASUREMENTS.%20WELL.mp4" type="video/mp4">
+            <source src="ANIMATIONS/DEFENSE%20ANIMATIONS/Position%20Measurements/POSITION%20MEASUREMENTS.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
 </body>
 </html>
+
