@@ -211,8 +211,8 @@
     <!-- Abstract Section -->
     <div class="section">
         <h2>Abstract</h2>
-        <p class="abstract", style="max-width: 1000px; margin: 0 auto; text-align: center;">
-            The Quantum Zeno Effect slows the evolution of a quantum system through frequent measurements, preventing state transitions. In the limit of infinitely fast measurements, the evolution effectively freezes. Quantum Zeno Dynamics (QZD) extends this by confining the system to a subspace of its Hilbert space. This work examines QZD through position and momentum measurements modeled as Von Neumann projections. Frequent measurements confine the system within the projection subspace, leading to remarkable effects near its boundaries. Position measurements on a free particle induce momentum reversals, whereas momentum measurements on a particle in a symmetric potential give rise to the novel phenomenon of equipotential translocation.
+        <p class="abstract" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            The Quantum Zeno Effect describes the inhibition of quantum state transitions through frequent measurements, effectively freezing the system's evolution in the limit of continuous observation. Quantum Zeno Dynamics (QZD) generalizes this concept by restricting the evolution to a specific subspace of the Hilbert space. In this work, we explore QZD under repeated position and momentum measurements, modeled using von Neumann projections. Position measurements on a free particle lead to confinement and momentum reversals at the boundaries of the projected region. Conversely, momentum measurements on a particle in a symmetric potential give rise to a novel phenomenon: equipotential translocation, wherein the wave packet appears to "jump" between regions of equal potential.
         </p>
         <p><a href="TFG-Trullols-Puigcerver-Albert.pdf" download>Read the Full Article</a></p>
     </div>
@@ -222,8 +222,7 @@
     <!-- Position Measurements Section -->
     <div class="section">
         <figure>
-
-        <h2>Zeno Dynamics via Position Measurements</h2>
+            <h2>Zeno Dynamics via Position Measurements</h2>
             <p style="max-width: 1200px; margin: 0 auto; text-align: center;">
                 We consider a free particle in one dimension, initially described by a Gaussian wave function:
             </p>
@@ -233,43 +232,40 @@
                 \]
             </p>
             <p style="max-width: 1200px; margin: 0 auto; text-align: center;">
-                In the above equation, \(\xi_0\) represents the normalized initial position and \(\kappa_0\) the normalized momentum. The temporal evolution is governed by the following dimensionless Schrödinger equation:
+                Here, \(\xi_0\) and \(\kappa_0\) denote the normalized initial position and momentum, respectively. The wave function evolves according to the dimensionless Schrödinger equation:
             </p>
             <p style="font-size: 1.2em;">
                 \[
                 i \frac{\partial \psi}{\partial \tau} = -\frac{1}{\kappa_0} \frac{\partial^2 \psi}{\partial \xi^2}
                 \]
             </p>
-            <p style="max-width:1200px; margin: 0 auto; text-align: center;">
-                We simulate the effect of performing \(N\) sequential position measurements, modeled as Von Neumann projections in \([\xi_{min}, \xi_{max}]\), applied every \(\Delta \tau\) time. The final state after \(N\) steps is given by:
+            <p style="max-width: 1200px; margin: 0 auto; text-align: center;">
+                We simulate the effect of performing \(N\) sequential position measurements, modeled as von Neumann projections onto the interval \([\xi_{\text{min}}, \xi_{\text{max}}]\), applied at time intervals \(\Delta \tau\). The system evolves as:
             </p>
-    
             <p style="font-size: 1.2em;">
-        \[
-        |\psi_N \rangle = \Pi e^{-i H \Delta \tau} \dots \Pi e^{-i H \Delta \tau}  \Pi e^{-i H \Delta \tau} |\psi(0)\rangle
-        \]
-    </p>
-
-    <p style="max-width:1200px; margin: 0 auto; text-align: center;">
-        Where the Hamiltonian \(H\) and the projection operator \(\Pi\) are defined as:
-    </p>
-    
-    <p style="font-size: 1.2em;">
-        \[
-        \begin{aligned}
-        H &= -\frac{1}{\kappa_0} \frac{\partial^2}{\partial \xi^2} \quad & \Pi &= \int_{\xi_{\text{min}}}^{\xi_{\text{max}}} |\xi\rangle \langle \xi| \, d\xi
-        \end{aligned}
-        \]
-    </p>
-    <p style="max-width:1200px; margin: 0 auto; text-align: center;">
-        The resulting temporal evolution of this practice is shown below:
-    </p>
+                \[
+                |\psi_N \rangle = \Pi e^{-i H \Delta \tau} \dots \Pi e^{-i H \Delta \tau} |\psi(0)\rangle
+                \]
+            </p>
+            <p style="max-width: 1200px; margin: 0 auto; text-align: center;">
+                where the Hamiltonian \(H\) and the projection operator \(\Pi\) are defined as:
+            </p>
+            <p style="font-size: 1.2em;">
+                \[
+                \begin{aligned}
+                H &= -\frac{1}{\kappa_0} \frac{\partial^2}{\partial \xi^2}, \quad & \Pi &= \int_{\xi_{\text{min}}}^{\xi_{\text{max}}} |\xi\rangle \langle \xi| \, d\xi
+                \end{aligned}
+                \]
+            </p>
+            <p style="max-width: 1200px; margin: 0 auto; text-align: center;">
+                The animation below illustrates the time evolution under repeated position measurements:
+            </p>
             <video controls loop>
                 <source src="ANIMATIONS/DEFENSE%20ANIMATIONS/Position%20Measurements/POSITION%20MEASUREMENTS.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <figcaption>
-                Evolution of a Gaussian wave packet with repeated position measurements in [\(\xi_{\text{min}}\), \(\xi_{\text{max}}\)]. The wave packet gets confined within the projection range, showing momentum reversals at the boundaries that mimic reflective walls.
+            <figcaption style="color: grey;">
+                Evolution of a Gaussian wave packet subjected to repeated position measurements in the interval \([\xi_{\text{min}}, \xi_{\text{max}}]\). The wave packet becomes confined within the projection region, exhibiting momentum reversals at the boundaries that mimic reflection.
             </figcaption>
         </figure>
     </div>
@@ -279,10 +275,9 @@
     <!-- Momentum Measurements Section -->
     <div class="section">
         <figure>
-            
-        <h2>Zeno Dynamics via Momentum Measurements</h2>
+            <h2>Zeno Dynamics via Momentum Measurements</h2>
             <p style="max-width: 1200px; margin: 0 auto; text-align: center;">
-                We now consider a particle in an initial state analogous to that introduced in the previous section, propagating towards a potential barrier defined by:
+                We now examine a particle prepared in an analogous Gaussian state, moving towards a symmetric potential barrier described by:
             </p>
             <p style="font-size: 1.2em;">
                 \[
@@ -290,7 +285,7 @@
                 \]
             </p>
             <p style="max-width: 1200px; margin: 0 auto; text-align: center;">
-                Here, \(v_0\) denotes the ratio between the maximum potential energy and the initial kinetic energy of the particle. The parameter \(\xi_b\) sets half the width of the barrier, while \(\alpha\) controls the smoothness of its edges. The time evolution of the system is governed by the dimensionless Schrödinger equation:
+                In this expression, \(v_0\) represents the ratio of the potential’s maximum height to the particle’s initial kinetic energy, \(\xi_b\) determines the half-width of the barrier, and \(\alpha\) controls the sharpness of its edges. The time evolution follows:
             </p>
             <p style="font-size: 1.2em;">
                 \[
@@ -298,33 +293,32 @@
                 \]
             </p>
             <p style="max-width: 1200px; margin: 0 auto; text-align: center;">
-                We now simulate the effect of performing \(N\) sequential momentum measurements, analgously to the previous case. The final state after \(N\) steps is given by:
+                We simulate \(N\) sequential momentum measurements, analogous to the position case, with the system evolving as:
             </p>
-             <p style="font-size: 1.2em;">
+            <p style="font-size: 1.2em;">
                 \[
-                |\psi_N \rangle = \Pi e^{-i H \Delta \tau} \dots \Pi e^{-i H \Delta \tau}  \Pi e^{-i H \Delta \tau} |\psi(0)\rangle
+                |\psi_N \rangle = \Pi e^{-i H \Delta \tau} \dots \Pi e^{-i H \Delta \tau} |\psi(0)\rangle
                 \]
-        
             </p>
-            <p style="max-width:1200px; margin: 0 auto; text-align: center;">
-                Where the new Hamiltonian \(H\) and the new projection operator \(\Pi\) are defined as:
+            <p style="max-width: 1200px; margin: 0 auto; text-align: center;">
+                The Hamiltonian \(H\) and the projection operator \(\Pi\) are now given by:
             </p>
             <p style="font-size: 1.2em;">
                 \[
                 \begin{aligned}
-                H &= -\frac{1}{\kappa_0} \frac{\partial^2}{\partial \xi^2} + \kappa_0v_0v(\xi) \quad & \Pi &= \int_{\kappa_{min}}^{\kappa_{max}} |\kappa\rangle \langle \kappa| \, d\kappa
+                H &= -\frac{1}{\kappa_0} \frac{\partial^2}{\partial \xi^2} + \kappa_0v_0v(\xi), \quad & \Pi &= \int_{\kappa_{\text{min}}}^{\kappa_{\text{max}}} |\kappa\rangle \langle \kappa| \, d\kappa
                 \end{aligned}
                 \]
             </p>
-            <p style="max-width:1200px; margin: 0 auto; text-align: center;">
-                The outcome of this simulation is shown below:
+            <p style="max-width: 1200px; margin: 0 auto; text-align: center;">
+                The animation below demonstrates the system’s behavior under repeated momentum measurements:
             </p>
             <video controls loop>
                 <source src="ANIMATIONS/DEFENSE%20ANIMATIONS/Momentum Measurements/MOMENTUM MEASUREMENTS,%20BARRIER.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <figcaption>
-                Evolution of a Gaussian wave packet with repeated momentum measurements in [0, \(\infty\)]. The momentum representation of the wave packet gets confined within the momentum projection range, showing a curious effect of translocation between equipotential points.
+            <figcaption style="color: grey;">
+                Evolution of a Gaussian wave packet subjected to repeated momentum measurements within the range \([0, \infty)\). The wave packet becomes confined in momentum space, leading to translocation between spatial regions of equal potential—a non-classical effect unique to Quantum Zeno Dynamics.
             </figcaption>
         </figure>
     </div>
@@ -334,22 +328,14 @@
         <div class="scroll-dot"></div>
         <div class="scroll-dot"></div>
     </div>
-    
+
     <script>
         // Scroll indicator functionality
         const sections = document.querySelectorAll('.section');
         const dots = document.querySelectorAll('.scroll-dot');
-    
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach((section, index) => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= sectionTop - 300) {
-                    dots.forEach(dot => dot.classList.remove('active'));
-                    dots[index].classList.add('active');
-                }
-            });
-        });
+
+        // You can insert the actual JS logic here
     </script>
 </body>
-</html>
+
+
