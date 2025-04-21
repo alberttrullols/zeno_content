@@ -98,7 +98,7 @@
             \]
         </p>
 
-        <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
+        <!-- <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
             The numerical solution, obtained via a Crank–Nicolson scheme, is shown below.
         </p>
 
@@ -110,13 +110,13 @@
         <figcaption style="margin-top: 10px; color: #555;">
             Free evolution of a Gaussian wave packet. The observed dynamics are given by Gaussian translation and natural spreading.
             <br>No position measurements are performed within the range [\(\xi_{\text{min}}\), \(\xi_{\text{max}}\)].
-        </figcaption>
+        </figcaption> -->
     </figure>
 
 
     <figure style="text-align: center; margin: 40px 0;">
         <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
-            We now simulate the effect of \(N\) sequential position measurements, modeled as Von Neumann projections, applied every \(\Delta \tau\). The final state after \(N\) steps is:
+            We simulate the effect of performing \(N\) sequential position measurements, modeled as Von Neumann projections in \([\xi_{min}, \xi_{max}]\), applied every \(\Delta \tau\) time. The final state after \(N\) steps is given by:
         </p>
 
         <p style="font-size: 1.2em;">
@@ -143,9 +143,9 @@
             Your browser does not support the video tag.
         </video>
 
-        <figcaption style="margin-top: 10px; color: #555;">
-            Evolution of a Gaussian wave packet with repeated position measurements in [\(\xi_{\text{min}}\), \(\xi_{\text{max}}\)].
-            <br>The wave packet is confined within the projection range, showing momentum reversals at the boundaries that mimic reflective walls.
+        <figcaption style="max-width: 800px; margin: 0 auto; text-align: center;">
+            Evolution of a Gaussian wave packet with repeated position measurements in [\(\xi_{\text{min}}\), \(\xi_{\text{max}}\)]. The wave packet gets confined within the projection range,
+            showing momentum reversals at the boundaries that mimic reflective walls.
         </figcaption>
     </figure>
 </div>
@@ -176,7 +176,33 @@
         \]
     </p>
     
+    <p style="max-width: 800px; margin: 0 auto; text-align: justify;">
+        We now simulate the effect of performing \(N\) sequential momentum measurements, analgously to the previous case. The final state after \(N\) steps is given by:
+    </p>
+     <p style="font-size: 1.2em;">
+        \[
+        |\psi_N \rangle = \Pi e^{-i H \Delta \tau} \dots \Pi e^{-i H \Delta \tau}  \Pi e^{-i H \Delta \tau} |\psi(0)\rangle
+        \]
 
+    </p>
+    <p style="font-size: 1.2em;">
+        \[
+        \begin{aligned}
+        H &= -\frac{1}{\kappa_0} \frac{\partial^2}{\partial \xi^2} + \kappa_0v_0v(\xi) \quad & \Pi &= \int_{\kappa_{min}}^{\kappa_{max}} |\kappa\rangle \langle \kappa| \, d\kappa
+        \end{aligned}
+        \]
+    </p>
+         <video controls loop style="width: 55%; height: auto;">
+            <source src="ANIMATIONS/DEFENSE%20ANIMATIONS/Momentum Measurements/MOMENTUM MEASUREMENTS,%20BARRIER.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <figcaption style="max-width: 800px; margin: 0 auto; text-align: center;">
+            Evolution of a Gaussian wave packet with repeated momentum measurements in [0, \(\infty\)]. The momentum representation of the wave packet gets confined within the momentum projection range, showing a curious effect of translocation between equipotential points.
+        </figcaption>
+    </figure>
+    <br>
+    <br>
 
 </body>
 </html>
